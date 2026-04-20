@@ -2,8 +2,6 @@
 
 This is a custom integration for controlling the AWSW WordClock using Home Assistant.
 
-![German WordClock](https://github.com/KRiZ-R/HA_AWSW_Wordclock/blob/main/WordClock%20Deutch.png)
-![Dutch WordClock](https://github.com/KRiZ-R/HA_AWSW_Wordclock/blob/main/WordClock%20Nederlands.png)
 
 I found this integration made by bluenazgul, who made this using ChatGPT.
 That integration only had switches for turning on the extra words, and the language selection did not work.
@@ -37,10 +35,9 @@ I wanted it to have some more functionality, like changing the light colors of t
 3. Restart Home Assistant.
 
 ### Manual Installation
-1. Download the latest release from the [Releases](https://github.com/KRiZ-R/HA_AWSW_Wordclock/releases) page.
-2. Extract the contents and copy the `awsw_wordclock` folder to your `custom_components` directory in Home Assistant.
+1. Copy the `awsw_wordclock` folder to your `custom_components` directory in Home Assistant.
    - The path should be: `custom_components/awsw_wordclock/`
-3. Restart Home Assistant and configure the integration via the integrations page or press the blue button below.
+2. Restart Home Assistant and configure the integration via the integrations page or press the blue button below.
 [![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=awsw_wordclock)
 
 ## Setup

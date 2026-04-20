@@ -2,10 +2,10 @@
   "domain": "awsw_wordclock",
   "name": "AWSW WordClock",
   "version": "2.1.1",
-  "documentation": "https://github.com/KRiZ-R/HA_AWSW_Wordclock",
+  "documentation": "https://github.com/AnveshakR/HA_AWSW_Wordclock",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@KRiZ-R"],
+  "codeowners": ["@AnveshakR"],
   "config_flow": true,
   "iot_class": "local_polling"
 }
