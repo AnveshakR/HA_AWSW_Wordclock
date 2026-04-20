@@ -78,8 +78,9 @@ async def update_options(hass: HomeAssistant, entry: ConfigEntry) -> None:
             # Always grab the latest interval value
             current_poll = hass.data[DOMAIN][entry.entry_id].get("polling_time", 5)
             LOGGER.debug("Polling WordClock (all lights) using interval: %s seconds", current_poll)
-            # Update all lights concurrently
-            await asyncio.gather(*(update_light(light) for light in lights))
+            for light in lights:
+                await update_light(light)
+                await asyncio.sleep(0.1)
 
         LOGGER.info("Setting up new polling with interval of %s seconds", new_polling_time)
         canceller = async_track_time_interval(hass, update_all, timedelta(seconds=new_polling_time))
@@ -133,7 +134,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         async def update_all(now):
             current_poll = hass.data[DOMAIN][entry.entry_id].get("polling_time", 5)
             LOGGER.debug("Polling WordClock (all lights) using interval: %s seconds", current_poll)
-            await asyncio.gather(*(update_light(light) for light in lights))
+            for light in lights:
+                await update_light(light)
+                await asyncio.sleep(0.1)
 
         LOGGER.info("Setting up polling for WordClock with interval of %s seconds", polling_time)
         # Only schedule polling if not already scheduled
